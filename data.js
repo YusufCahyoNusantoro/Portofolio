@@ -28,7 +28,7 @@ const SITE = {
     nama: "Yusuf Cahyo Nusantoro",
     label: "Program Management Officer · Product Owner",
     // Kalimat besar. Bagian kedua tampil berwarna.
-    judulBesar: ["Mengubah data proyek menjadi", "keputusan yang akurat"],
+    judulBesar: ["Menganalisis data dan membangun", "aplikasi pemantauan proyek"],
     pengantar: "Saya Yusuf Cahyo Nusantoro. Di Sinar Mas Land, saya menganalisis management report lintas SBU, berperan sebagai Product Owner aplikasi Project Tracking bersama tim PMO, dan membangun dashboard untuk mendukung analisis dan perencanaan infrastruktur.",
     foto: "img/foto.jpg",          // ganti foto: timpa file img/foto.jpg
     inisial: "YC",                 // tampil kalau foto tidak ditemukan
@@ -53,7 +53,7 @@ const SITE = {
     daftar: [
       {
         posisi: "Program Management Officer",
-        periode: "September 2024 – Sekarang",
+        periode: "September 2024 – Sekarang · 2 thn 2 bln",
         poin: [
           "Menginput management report bulanan dari berbagai unit bisnis (HC, Retail & Hospitality, Asset Management, Residential, Commercial, dll) ke dalam Excel, menganalisis selisih dan tren dibanding bulan-bulan sebelumnya, lalu menyajikannya dalam presentasi untuk manajemen senior.",
           "Memperbarui data Work Breakdown Structure (WBS) di SAP sesuai progres proyek.",
@@ -63,7 +63,7 @@ const SITE = {
       },
       {
         posisi: "Product Analyst (Magang)",
-        periode: "Oktober 2022 – Agustus 2024",
+        periode: "Oktober 2022 – Agustus 2024 · 1 thn 11 bln",
         poin: [
           "Menggali kebutuhan pengguna dan menyusun PRD untuk aplikasi internal: Security Inspection, Manage Building, Property Management, dan DEFO.",
           "Mengembangkan dashboard pemantauan laporan kehadiran dan temuan yang meningkatkan jumlah pengguna 30%.",
@@ -128,10 +128,10 @@ const SITE = {
       {
         nama: "Dibalik Saham · IDX Screener",
         lencana: "",
-        deskripsi: "Screener saham Bursa Efek Indonesia (±900 emiten) dengan skor, filter uptrend dan breakout, chart harian Smart Money Concepts, watchlist, kalender, dan jurnal.",
-        tag: ["Pasar Modal", "Smart Money Concepts", "Watchlist"],
+        deskripsi: "Screener saham Bursa Efek Indonesia (±900 emiten) dengan skor, filter uptrend dan breakout, chart harian Smart Money Concepts, watchlist, kalender, dan portofolio saham.",
+        tag: ["Pasar Modal", "Smart Money Concepts", "Portofolio"],
         link: "https://yusufcahyonusantoro.github.io/idx-screener/",
-        catatan: "",
+        catatan: "Dibuat untuk penggunaan pribadi, bukan rekomendasi jual atau beli saham.",
         gambar: [
           { file: "idx-screener-1-daftar.jpg", ket: "Tampilan IDX Screener: daftar saham" },
           { file: "idx-screener-2-chart.jpg",  ket: "Tampilan IDX Screener: chart harian" },
