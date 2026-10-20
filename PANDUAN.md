@@ -95,5 +95,5 @@ Tiap kali ada perubahan, upload ulang hanya file yang berubah (biasanya `data.js
 ## Hal yang perlu diingat sebelum dipublikasikan
 
 - Website ini publik. Jangan menaruh data perusahaan yang belum boleh keluar, termasuk di screenshot (samarkan nama orang, nomor SPK, nama ruas, atau angka sensitif).
-- Nomor WhatsApp di bagian `kontak` akan terlihat semua orang. Hapus blok WhatsApp bila tidak mau.
+- Nomor telepon sengaja tidak dicantumkan di website. Kalau ingin menambahkan, ingat nomor di halaman publik bisa diambil siapa saja.
 - Setelah CV diperbarui, ekspor ulang ke PDF dan timpa file CV di folder ini supaya tombol unduh tidak memberi versi lama.

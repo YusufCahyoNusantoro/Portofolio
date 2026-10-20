@@ -179,7 +179,7 @@ const SITE = {
 
   /* ---------- Kontak ----------
      utama: true  = tombol berwarna (cukup satu).
-     Untuk menghapus nomor WhatsApp dari publik, hapus blok WhatsApp. */
+     Nomor telepon sengaja tidak dicantumkan agar tidak diambil bot. */
   kontak: {
     tampil: true,
     judul: "Mari Terhubung",
@@ -188,7 +188,6 @@ const SITE = {
       { label: "Email Saya", url: "mailto:cahyoyusuf82@gmail.com", utama: true },
       { label: "LinkedIn",   url: "https://www.linkedin.com/in/yusufcahyon/" },
       { label: "GitHub",     url: "https://github.com/YusufCahyoNusantoro" },
-      { label: "WhatsApp",   url: "https://wa.me/6285883142067" },
     ],
   },
 
