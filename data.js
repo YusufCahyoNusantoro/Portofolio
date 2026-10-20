@@ -86,7 +86,7 @@ const SITE = {
   proyek: {
     tampil: true,
     judul: "Proyek Pilihan",
-    subjudul: "Satu aplikasi internal yang saya kelola bersama tim PMO, dan tiga aplikasi pribadi yang saya bangun dengan bantuan AI (Claude).",
+    subjudul: "Satu aplikasi internal yang saya kelola bersama tim PMO, dan tiga aplikasi pribadi yang saya bangun dengan bantuan AI (Claude). Tautan aplikasi tersedia atas permintaan.",
     daftar: [
       {
         nama: "Protrack (Project Tracker)",
@@ -105,13 +105,18 @@ const SITE = {
       {
         nama: "Damage Road",
         lencana: "Beta",
-        deskripsi: "Dashboard pemantauan kerusakan jalan berbasis gambar DWG hasil Civil 3D: peta satelit titik kerusakan, superimpose versi gambar, filter periode dan ruas, status penanganan, serta rekap biaya perbaikan. Nomor SPK diintegrasikan dari data eksternal.",
+        deskripsi: "Dashboard pemantauan kerusakan jalan berbasis gambar DWG hasil Civil 3D: peta satelit titik kerusakan, superimpose versi gambar, filter periode dan ruas, status penanganan, serta rekap biaya perbaikan. Nomor SPK diintegrasikan dari data eksternal. Nilai biaya, nama ruas, dan koordinat pada tampilan disamarkan.",
         tag: ["Civil 3D (DWG)", "Integrasi Data Eksternal", "Dashboard"],
-        link: "https://yusufcahyonusantoro.github.io/Dashboard-Damage-Road/",
-        catatan: "",
+        link: "",
+        catatan: "Tautan aplikasi tersedia atas permintaan.",
         gambar: [
-          { file: "damage-road-1-peta.jpg", ket: "Tampilan Damage Road: peta kerusakan jalan" },
-          { file: "damage-road-2-dwg.jpg",  ket: "Tampilan Damage Road: superimpose versi gambar DWG dan detail issue", posisi: "center" },
+          { file: "damage-road-4-ringkasan.jpg", ket: "Damage Road: ringkasan total titik, status SPK, tren biaya, dan titik per ruas (nilai biaya disamarkan)" },
+          { file: "damage-road-5-rekap.jpg",     ket: "Damage Road: rekap ruas jalan, progres status issue, dan daftar kerusakan" },
+          { file: "damage-road-3-issues.jpg",    ket: "Damage Road: daftar issue per ruas dengan kode kerusakan dan saran kerusakan berulang" },
+          { file: "damage-road-6-gambar.jpg",    ket: "Damage Road: gambar DWG hasil Civil 3D dengan titik kerusakan berwarna per tingkat keparahan", posisi: "center" },
+          { file: "damage-road-7-satelit.jpg",   ket: "Damage Road: superimpose gambar DWG di atas peta satelit dan zona kerusakan berulang", posisi: "center" },
+          { file: "damage-road-1-peta.jpg",      ket: "Damage Road: peta sebaran titik kerusakan jalan" },
+          { file: "damage-road-2-dwg.jpg",       ket: "Damage Road: superimpose versi gambar DWG dan detail issue (nama ruas dan koordinat disamarkan)", posisi: "center" },
         ],
       },
       {
@@ -119,8 +124,8 @@ const SITE = {
         lencana: "",
         deskripsi: "Aplikasi pencatatan keuangan dengan dashboard tren pemasukan dan pengeluaran, anggaran vs realisasi, kunci PIN, foto bukti transaksi, dan sinkronisasi Google Sheets.",
         tag: ["Google Sheets", "Dashboard", "PIN Lock"],
-        link: "https://yusufcahyonusantoro.github.io/MyCuan/",
-        catatan: "",
+        link: "",
+        catatan: "Tautan aplikasi tersedia atas permintaan.",
         gambar: [
           { file: "mycuan-1-saldo.jpg", ket: "Tampilan MyCuan: saldo dan anggaran" },
         ],
@@ -130,8 +135,8 @@ const SITE = {
         lencana: "",
         deskripsi: "Screener saham Bursa Efek Indonesia (±900 emiten) dengan skor, filter uptrend dan breakout, chart harian Smart Money Concepts, watchlist, kalender, dan portofolio saham.",
         tag: ["Pasar Modal", "Smart Money Concepts", "Portofolio"],
-        link: "https://yusufcahyonusantoro.github.io/idx-screener/",
-        catatan: "Dibuat untuk penggunaan pribadi, bukan rekomendasi jual atau beli saham.",
+        link: "",
+        catatan: "Dibuat untuk penggunaan pribadi, bukan rekomendasi jual atau beli saham. Tautan aplikasi tersedia atas permintaan.",
         gambar: [
           { file: "idx-screener-1-daftar.jpg", ket: "Tampilan IDX Screener: daftar saham" },
           { file: "idx-screener-2-chart.jpg",  ket: "Tampilan IDX Screener: chart harian" },
@@ -187,7 +192,6 @@ const SITE = {
     tombol: [
       { label: "Email Saya", url: "mailto:cahyoyusuf82@gmail.com", utama: true },
       { label: "LinkedIn",   url: "https://www.linkedin.com/in/yusufcahyon/" },
-      { label: "GitHub",     url: "https://github.com/YusufCahyoNusantoro" },
     ],
   },
 
