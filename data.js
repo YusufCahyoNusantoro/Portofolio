@@ -55,7 +55,7 @@ const SITE = {
         posisi: "Program Management Officer",
         periode: "September 2024 – Sekarang · 2 thn 2 bln",
         poin: [
-          "Menginput management report bulanan dari berbagai unit bisnis (HC, Retail & Hospitality, Asset Management, Residential, Commercial, dll) ke dalam Excel, menganalisis selisih dan tren dibanding bulan-bulan sebelumnya, lalu menyajikannya dalam presentasi untuk manajemen senior.",
+          "Menginput management report bulanan dari berbagai unit bisnis (HC, Retail & Hospitality, Asset Management, Residential, Commercial, dll) ke dalam Excel, menganalisis selisih dan tren dibanding bulan-bulan sebelumnya, lalu menyiapkan hasilnya sebagai bahan presentasi untuk manajemen senior.",
           "Memperbarui data Work Breakdown Structure (WBS) di SAP sesuai progres proyek.",
           "Product Owner aplikasi Project Tracking (Protrack) dengan sekitar 250 pengguna; final approver pembaruan progres dari PTL/PIC.",
           "Membangun Damage Road, dashboard pemeliharaan jalan berbasis gambar DWG hasil Civil 3D.",

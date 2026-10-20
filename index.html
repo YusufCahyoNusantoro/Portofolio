@@ -123,6 +123,18 @@ function showError(msg){
   document.body.prepend(d);
 }
 function ext(url){return /^https?:/i.test(url||'')}
+/* alamat berbahaya (javascript:, data:) tidak dipakai sebagai link */
+function su(u){u=String(u==null?'':u);return /^\s*(javascript|data|vbscript):/i.test(u)?'':u}
+/* mode pratinjau: dipakai editor.html lewat iframe (index.html?preview=1) */
+var PREVIEW=/[?&]preview=1/.test(location.search),iv=null;
+function imgSrc(n){var m=window.__previewImages;return (m&&m[n])||('img/'+n)}
+function fotoSrc(p){var m=window.__previewImages,b=String(p).split('/').pop();return (m&&m[b])||p}
+function reset(){
+  document.getElementById('nav').textContent='';document.getElementById('app').textContent='';
+  document.getElementById('foot').textContent='';
+  if(iv){clearInterval(iv);iv=null}
+  var e=document.querySelector('.err');if(e)e.remove();
+}
 
 /* ---------- lightbox (tampilan gambar besar) ---------- */
 var lb=document.getElementById('lb'),li=lb.querySelector('img'),cap=lb.querySelector('.cap'),
@@ -141,6 +153,7 @@ document.addEventListener('keydown',function(e){
 
 /* ---------- kartu proyek ---------- */
 function card(p){
+  p=Object.assign({},p);p.link=su(p.link);
   var gambar=p.gambar||[];
   var shot=el('div',{class:'shot'},[el('div',{class:'ph',text:p.nama})]);
   var imgs=[];
@@ -156,7 +169,7 @@ function card(p){
     if(i===0)im.classList.add('on');
     im.onload=function(){shot.classList.add('has')};
     im.onerror=function(){im.remove();refresh()};
-    im.src='img/'+g.file;
+    im.src=imgSrc(g.file);
     imgs.push(im);shot.append(im);
   });
   var cb=el('div',{class:'cb'},[
@@ -206,7 +219,7 @@ function build(S){
 
   /* hero */
   var av=el('div',{class:'avatar','aria-label':'Foto profil'});
-  if(P.foto){var fi=new Image();fi.alt=P.nama;fi.onerror=function(){av.textContent=P.inisial||''};fi.src=P.foto;av.append(fi)}
+  if(P.foto){var fi=new Image();fi.alt=P.nama;fi.onerror=function(){av.textContent=P.inisial||''};fi.src=fotoSrc(P.foto);av.append(fi)}
   else av.textContent=P.inisial||'';
   var jb=P.judulBesar||[];
   app.append(el('header',{class:'hero'},[el('div',{class:'w'},[
@@ -216,7 +229,7 @@ function build(S){
       el('p',{class:'lead',text:P.pengantar}),
       el('div',{class:'btns'},[
         order.indexOf('proyek')>-1?el('a',{class:'btn p',href:'#proyek',text:'Lihat Proyek'}):null,
-        P.cv?el('a',{class:'btn',href:P.cv,download:true,text:'Unduh CV (PDF)'}):null
+        P.cv?el('a',{class:'btn',href:su(P.cv),download:true,text:'Unduh CV (PDF)'}):null
       ])
     ]),av
   ])]));
@@ -255,8 +268,8 @@ function build(S){
     },
     kontak:function(d){
       return el('div',{class:'btns rv'},(d.tombol||[]).map(function(t){
-        var e=ext(t.url);
-        return el('a',{class:'btn'+(t.utama?' p':''),href:t.url,target:e?'_blank':null,rel:e?'noopener':null,text:t.label});
+        var u=su(t.url),e=ext(u);
+        return el('a',{class:'btn'+(t.utama?' p':''),href:u,target:e?'_blank':null,rel:e?'noopener':null,text:t.label});
       }));
     }
   };
@@ -273,14 +286,16 @@ function build(S){
 
   /* animasi muncul saat di-scroll */
   var rv=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window){
+  if(PREVIEW||!('IntersectionObserver' in window)){
+    rv.forEach(function(e){e.classList.add('in')});
+  }else{
     var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
     rv.forEach(function(e){io.observe(e)});
-  }else rv.forEach(function(e){e.classList.add('in')});
+  }
 
   /* gambar bergantian otomatis di kartu yang punya lebih dari satu gambar */
   if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
-    setInterval(function(){
+    iv=setInterval(function(){
       document.querySelectorAll('.shot').forEach(function(sh){
         var im=[].slice.call(sh.querySelectorAll('img'));if(im.length<2)return;
         var i=im.findIndex(function(m){return m.classList.contains('on')});
@@ -288,6 +303,22 @@ function build(S){
       });
     },3800);
   }
+}
+
+/* ---------- menerima draf dari editor.html (hanya di mode pratinjau) ---------- */
+if(PREVIEW){
+  window.addEventListener('message',function(e){
+    var d=e.data;if(!d||typeof d!=='object')return;
+    if(d.type==='site-preview'&&d.site){
+      window.__previewImages=d.images||{};
+      var y=window.scrollY;
+      try{reset();build(d.site)}catch(err){reset();showError('Draf belum lengkap: '+err.message)}
+      window.scrollTo(0,y);
+    }else if(d.type==='goto'){
+      var t=d.id==='top'?null:document.getElementById(d.id);
+      if(d.id==='top')window.scrollTo({top:0,behavior:'smooth'});else if(t)t.scrollIntoView({behavior:'smooth'});
+    }
+  });
 }
 
 /* ---------- mulai ---------- */
