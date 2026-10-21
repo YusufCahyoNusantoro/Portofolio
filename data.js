@@ -18,15 +18,15 @@ const SITE = {
 
   /* ---------- Judul tab browser & deskripsi (muncul di Google) ---------- */
   situs: {
-    judul: "Yusuf Cahyo Nusantoro | Program Management Officer & Product Owner",
-    deskripsi: "Portofolio Yusuf Cahyo Nusantoro: Program Management Officer & Product Owner di Sinar Mas Land. Dashboard, aplikasi internal, dan analisis data proyek.",
+    judul: "Yusuf Cahyo Nusantoro | Program Management Officer",
+    deskripsi: "Portofolio Yusuf Cahyo Nusantoro: Program Management Officer di Sinar Mas Land. Dashboard, aplikasi internal, dan analisis data proyek.",
     logo: "YC",
   },
 
   /* ---------- Bagian paling atas ---------- */
   profil: {
     nama: "Yusuf Cahyo Nusantoro",
-    label: "Program Management Officer · Product Owner",
+    label: "Program Management Officer",
     // Kalimat besar. Bagian kedua tampil berwarna.
     judulBesar: ["Menganalisis data dan membangun", "aplikasi pemantauan proyek"],
     pengantar: "Saya Yusuf Cahyo Nusantoro. Di Sinar Mas Land, saya menganalisis management report lintas SBU, berperan sebagai Product Owner aplikasi Project Tracking bersama tim PMO, dan membangun dashboard untuk mendukung analisis dan perencanaan infrastruktur.",
@@ -49,7 +49,7 @@ const SITE = {
   pengalaman: {
     tampil: true,
     judul: "Pengalaman Kerja",
-    subjudul: "PT Bumi Serpong Damai Tbk (Sinar Mas Land), Jakarta",
+    subjudul: "PT Bumi Serpong Damai Tbk (Sinar Mas Land), Tangerang",
     daftar: [
       {
         posisi: "Program Management Officer",
